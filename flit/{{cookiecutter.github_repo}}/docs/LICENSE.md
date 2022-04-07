@@ -1,4 +1,0 @@
-{% raw %}
-{%
-   include "../LICENSE*"
-%}{% endraw %}
