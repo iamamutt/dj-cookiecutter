@@ -1,0 +1,12 @@
+default_context:
+  author_name: "Joseph Burling"
+  author_email: "joseph@datajoint.com"
+  organization: "Science Institute"
+  lab: "Neuro Lab"
+  github_user: "iamamutt"
+  github_repo: "o-science-institute_w-neuro-lab"
+  pkg_version: "0.0.1"
+  homepage_url: https://github.com/iamamutt
+  docs_url: https://iamamutt.github.io/o-science-institute_w-neuro-lab
+abbreviations:
+  djcc: https://github.com/datajoint-company/dj-cookiecutter.git

@@ -41,7 +41,7 @@ cookiecutter git@github.com:datajoint-company/dj-cookiecutter.git --directory wo
 
 > Note: cookiecutter will cache/clone this specified template repo to your user directory's ~/.cookiecutters
 
-> Note: the [`flit`](flit/README.md) template requires _cookiecutter>=2.0.0_
+> Note: the [`datajoint-workflow`](datajoint-workflow/README.md) template requires _cookiecutter>=2.0.0_
 
 **context of cookiecutter.json**
 ```
@@ -60,7 +60,7 @@ cookiecutter git@github.com:datajoint-company/dj-cookiecutter.git --directory wo
 If you want to know more details, read this [page](https://cookiecutter.readthedocs.io/en/1.7.2/first_steps.html), it explains the basic logic about how cookiecutter works.
 
 ## Existing template
-- [flit](https://github.com/datajoint-company/dj-cookiecutter/tree/main/flit) by @iamamutt
+- [datajoint-workflow](https://github.com/datajoint-company/dj-cookiecutter/tree/main/datajoint-workflow) by @iamamutt
 - [cicd](#) by @Yambottle
 - `workflow/element` created as initial examples for science-team, welcome changes or new templates for your own requirements
 
