@@ -1,0 +1,24 @@
+{
+    "__project_name": "datajoint-workflow-neuro",
+    "__pkg_import_name": "neurowf",
+    "github_repo": "o-science-institute_w-neuro-lab",
+    "github_user": "dj-sciops",
+    "author_name": "FirstName LastName",
+    "author_email": "firstname@datajoint.com",
+    "organization": "Science Institute",
+    "lab": "Neuro Lab",
+    "__user": "firstname-lastname",
+    "__org": "science-institute",
+    "__lab": "neuro-lab",
+    "pkg_version": "0.0.1",
+    "python_version": "3.9",
+    "homepage_url": "https://github.com/dj-sciops",
+    "docs_url": "https://dj-sciops.github.io/o-science-institute_w-neuro-lab",
+    "_djconfig": "dj_local_conf.json",
+    "_copy_without_render": [
+        "docs/assets/*.svg",
+        "docs/assets/setup/*.png",
+        "docs/css/*",
+        "docs/overrides/*"
+    ]
+}
