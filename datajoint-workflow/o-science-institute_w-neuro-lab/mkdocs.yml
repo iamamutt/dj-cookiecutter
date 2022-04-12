@@ -26,8 +26,11 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
+    - navigation.instant
     - navigation.tabs
     - navigation.expand
+    - navigation.sections
+    - toc.integrate
 
 extra:
   version:
@@ -44,6 +47,9 @@ extra:
       link: https://stackoverflow.com/questions/tagged/datajoint
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/DataJointNeuro
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
 
 extra_css:
   - css/material.css
@@ -71,7 +77,7 @@ plugins:
   - search
   - gen-files:
       scripts:
-        - docs/gen_api_pages.py
+        - docs/hooks/gen_api_pages.py
   - literate-nav:
       nav_file: SUMMARY.md
   - section-index

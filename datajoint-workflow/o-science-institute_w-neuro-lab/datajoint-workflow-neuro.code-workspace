@@ -68,6 +68,7 @@
 		]
 	},
 	"settings": {
+		"autoDocstring.customTemplatePath": "configs/docstrings.mustache",
 		"autoDocstring.docstringFormat": "google",
 		"autoDocstring.generateDocstringOnEnter": true,
 		"autoDocstring.guessTypes": true,
@@ -91,12 +92,20 @@
 		},
 		"python.defaultInterpreterPath": "${env:CONDA_ENV_ROOT}/neurowf",
 		"python.linting.mypyEnabled": true,
-		"autoDocstring.customNeuro LabPath": "configs/docstrings.mustache"
+		"djcookiecutter.localPath": "${env:HOME}/Documents/datajoint/dj-cookiecutter"
 	},
 	"tasks": {
 		// See https://go.microsoft.com/fwlink/?LinkId=733558
 		// for the documentation about the tasks.json format
 		"version": "2.0.0",
+		"inputs": [
+			{
+				"type": "promptString",
+				"default": "~/path/to/dj-cookiecutter",
+				"description": "Path to root of local cookiecutter repo.",
+				"id": "cookiepath"
+			}
+		],
 		"options": {
 			"cwd": "${workspaceFolder}"
 		},
@@ -199,12 +208,12 @@
 				"label": "pip uninstall datajoint-workflow-neuro",
 				"type": "shell",
 				"command": "find . -name '*.egg-info' -type d -exec rm -rf {} +",
-				"options": {
-					"cwd": "${workspaceFolder}"
-				},
 				"dependsOn": [
 					"uninstall pkg"
-				]
+				],
+				"options": {
+					"cwd": "${workspaceFolder}"
+				}
 			},
 			{
 				"label": "pre-commit install",
@@ -308,6 +317,8 @@
 					"&&",
 					"**/*/retrocookie.sh",
 					"-i",
+					"'datajoint-workflow-neuro.code-workspace'",
+					"-i",
 					"typings",
 					"-i",
 					"'docs/assets/*'",
@@ -317,10 +328,10 @@
 					"'!src/neurowf/__init__.py'",
 					"-i",
 					"'!src/neurowf/entrypoint.py'",
-					"${workspaceFolder}",
+					"${workspaceFolder}"
 				],
 				"options": {
-					"cwd": "${input:cookiepath}"
+					"cwd": "${config:djcookiecutter.localPath}"
 				}
 			},
 			{
@@ -330,19 +341,11 @@
 				"args": [
 					"-r",
 					".",
-					"'${workspaceFolder}'",
+					"'${workspaceFolder}'"
 				],
 				"options": {
-					"cwd": "${input:cookiepath}"
+					"cwd": "${config:djcookiecutter.localPath}"
 				}
-			}
-		],
-		"inputs": [
-			{
-				"id": "cookiepath",
-				"type": "promptString",
-				"default": "~/Documents/dj-sciops/dj-cookiecutter",
-				"description": "Path to root of local cookiecutter repo."
 			}
 		]
 	}
