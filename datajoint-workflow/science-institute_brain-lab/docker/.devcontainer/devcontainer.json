@@ -1,6 +1,6 @@
 // For format details, see https://aka.ms/devcontainer.json
 {
-	"name": "datajoint-workflow-brain (devcontainer)",
+	"name": "sciops-brain-lab (devcontainer)",
 	"dockerComposeFile": [
 		"../docker-compose-devcontainer_env.yaml"
 	],

@@ -33,10 +33,38 @@
 	},
 	"folders": [
 		{
-			"name": "datajoint-workflow-brain",
+			"name": "sciops-brain-lab",
 			"path": "."
 		}
 	],
+	"settings": {
+		"autoDocstring.customTemplatePath": "configs/docstrings.mustache",
+		"autoDocstring.docstringFormat": "google",
+		"autoDocstring.generateDocstringOnEnter": true,
+		"autoDocstring.guessTypes": true,
+		"autoDocstring.startOnNewLine": false,
+		"conventionalCommits.scopes": [
+			"pipeline",
+			"actions",
+			"loaders",
+			"package",
+			"module",
+			"docker"
+		],
+		"djcookiecutter.condaExec": "mamba",
+		"djcookiecutter.localPath": "${env:HOME}/Documents/datajoint/dj-cookiecutter",
+		"files.exclude": {
+			"**/.DS_Store": true,
+			"**/.git": true,
+			"**/.hg": true,
+			"**/.svn": true,
+			"**/CVS": true,
+			"**/Thumbs.db": true,
+			"*.command": true
+		},
+		"python.defaultInterpreterPath": "${env:CONDA_ENV_ROOT}/sciopsbrainlab",
+		"python.linting.mypyEnabled": true
+	},
 	"launch": {
 		"version": "0.2.0",
 		"configurations": [
@@ -54,7 +82,7 @@
 			{
 				"name": "Python: Debug entrypoint.py",
 				"type": "python",
-				"program": "${workspaceFolder}/src/brainwf/entrypoint.py",
+				"program": "${workspaceFolder}/src/sciopsbrainlab/entrypoint.py",
 				"args": [
 					"task1",
 					"-d",
@@ -68,34 +96,6 @@
 				"request": "launch"
 			}
 		]
-	},
-	"settings": {
-		"autoDocstring.customTemplatePath": "configs/docstrings.mustache",
-		"autoDocstring.docstringFormat": "google",
-		"autoDocstring.generateDocstringOnEnter": true,
-		"autoDocstring.guessTypes": true,
-		"autoDocstring.startOnNewLine": false,
-		"conventionalCommits.scopes": [
-			"pipeline",
-			"actions",
-			"loaders",
-			"package",
-			"module",
-			"docker"
-		],
-		"files.exclude": {
-			"**/.DS_Store": true,
-			"**/.git": true,
-			"**/.hg": true,
-			"**/.svn": true,
-			"**/CVS": true,
-			"**/Thumbs.db": true,
-			"*.command": true
-		},
-		"python.defaultInterpreterPath": "${env:CONDA_ENV_ROOT}/brainwf",
-		"python.linting.mypyEnabled": true,
-		"djcookiecutter.localPath": "${env:HOME}/Documents/datajoint/dj-cookiecutter",
-		"djcookiecutter.condaExec": "mamba"
 	},
 	"tasks": {
 		// See https://go.microsoft.com/fwlink/?LinkId=733558
@@ -154,11 +154,27 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"brainwf",
+					"sciopsbrainlab",
 					"${config:djcookiecutter.condaExec}",
 					"update",
 					"-qy",
 					"--all"
+				]
+			},
+			{
+				"label": "conda remove: env",
+				"type": "shell",
+				"command": "conda",
+				"args": [
+					"run",
+					"--no-capture-output",
+					"-n",
+					"base",
+					"${config:djcookiecutter.condaExec}",
+					"env",
+					"remove",
+					"-n",
+					"sciopsbrainlab"
 				]
 			},
 			{
@@ -169,7 +185,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"brainwf",
+					"sciopsbrainlab",
 					"${config:djcookiecutter.condaExec}",
 					"list"
 				],
@@ -185,7 +201,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"brainwf",
+					"sciopsbrainlab",
 					"pip",
 					"install",
 					"-e",
@@ -200,11 +216,11 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"brainwf",
+					"sciopsbrainlab",
 					"pip",
 					"uninstall",
 					"-y",
-					"datajoint-workflow-brain"
+					"sciops-brain-lab"
 				]
 			},
 			{
@@ -227,7 +243,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"brainwf",
+					"sciopsbrainlab",
 					"pre-commit",
 					"install",
 					"--install-hooks"
@@ -241,7 +257,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"brainwf",
+					"sciopsbrainlab",
 					"pre-commit",
 					"autoupdate"
 				]
@@ -254,7 +270,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"brainwf",
+					"sciopsbrainlab",
 					"pre-commit",
 					"run",
 					"--verbose",
@@ -262,18 +278,23 @@
 				]
 			},
 			{
+				"label": "show recommended extensions",
+				"command": "${command:workbench.extensions.action.showRecommendedExtensions}"
+			},
+			{
 				"label": "initial setup",
-				"type": "shell",
-				"command": "echo 'run setup'",
+				"command": "${command:workbench.action.reloadWindow}",
 				"dependsOn": [
+					"show recommended extensions",
 					"conda install: environment.yml",
-					"pre-commit install",
-					"pip install dev package"
+					"pip install dev package",
+					"pre-commit install"
 				],
 				"dependsOrder": "sequence",
 				"options": {
 					"cwd": "${workspaceFolder}"
-				}
+				},
+				"problemMatcher": []
 			},
 			{
 				"label": "docker-compose up codebook",
@@ -333,17 +354,17 @@
 					"&&",
 					"**/*/retrocookie.sh",
 					"-i",
-					"'datajoint-workflow-brain.code-workspace'",
+					"'sciops-brain-lab.code-workspace'",
 					"-i",
 					"typings",
 					"-i",
 					"'docs/assets/*'",
 					"-i",
-					"'src/brainwf/*'",
+					"'src/sciopsbrainlab/*'",
 					"-i",
-					"'!src/brainwf/__init__.py'",
+					"'!src/sciopsbrainlab/__init__.py'",
 					"-i",
-					"'!src/brainwf/entrypoint.py'",
+					"'!src/sciopsbrainlab/entrypoint.py'",
 					"${workspaceFolder}"
 				],
 				"options": {

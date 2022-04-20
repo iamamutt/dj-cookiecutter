@@ -2,7 +2,7 @@ _View the latest documentation site here:_ [https://dj-sciops.github.io/science-
 
 <!--intro-start-->
 
-# `datajoint-workflow-brain`
+# `sciops-brain-lab`
 
 _A DataJoint SciOps Workflow for Science Institute, Brain Lab_
 
@@ -108,7 +108,7 @@ First, clone a local copy of the [project repository](https://github.com/dj-scio
 
 ```bash
 git clone https://github.com/dj-sciops/science-institute_brain-lab.git
-cd "datajoint-workflow-brain"
+cd "sciops-brain-lab"
 ```
 
 ### 2. Create a new python environment
@@ -124,10 +124,10 @@ mamba env create -f environment.yml --force
 2. Activate the new environment:
 
 ```bash
-conda activate brainwf
+conda activate sciopsbrainlab
 ```
 
-### 3. Install the package `datajoint-workflow-brain`
+### 3. Install the package `sciops-brain-lab`
 
 After the new virtual environment has been created and activated, install this python package using `pip>=62.0` (`pip` is already in the list of requirements from the `environment.yml` file).
 
@@ -140,7 +140,7 @@ pip install .
 If you need to uninstall the package, do so with `pip`:
 
 ```bash
-pip uninstall datajoint-workflow-brain
+pip uninstall sciops-brain-lab
 ```
 
 #### Additional setup for local development and testing
@@ -169,7 +169,7 @@ See the [_Development setup_](./CONTRIBUTING.md#setting-up-a-local-development-e
 ├── scripts                 <- Analysis examples or production scripts which rely on
 │                              importing the actual Python package, e.g. running queries.
 ├── src
-│   └── brainwf             <- Actual Python package where the main functionality goes.
+│   └── sciopsbrainlab             <- Actual Python package where the main functionality goes.
 ├── tests                   <- Unit and integration tests which can be run with `pytest` or `nox`.
 ├── .cookiecutter.json      <- Options specified during template generation.
 ├── .gitignore              <- Files and folders to ignore for git.

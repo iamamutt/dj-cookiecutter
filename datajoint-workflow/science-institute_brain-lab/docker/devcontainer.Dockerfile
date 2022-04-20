@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
-ARG PROJECT_NAME=datajoint-workflow-brain
-ARG IMPORT_NAME=brainwf
+ARG PROJECT_NAME=sciops-brain-lab
+ARG IMPORT_NAME=sciopsbrainlab
 ARG REPO_OWNER=dj-sciops
 ARG REPO_NAME=science-institute_brain-lab
 ARG HOST_UID=1000

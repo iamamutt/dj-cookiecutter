@@ -117,10 +117,10 @@ def write_version(session: nox.Session) -> None:
 
     session.log(f"Overwriting 'version.py' to '{version}'")
 
-    with open("src/brainwf/version.py", "w") as out:
+    with open("src/sciopsbrainlab/version.py", "w") as out:
         session.run("echo", f'__version__ = "{version}"', stdout=out, external=True)
 
-    git_action_bot(session, add=["--force", "src/brainwf/version.py"])
+    git_action_bot(session, add=["--force", "src/sciopsbrainlab/version.py"])
 
 
 @nox.session(python=default_python_version, reuse_venv=True)

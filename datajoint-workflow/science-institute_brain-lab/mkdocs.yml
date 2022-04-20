@@ -95,6 +95,6 @@ plugins:
             members_order: source
             line_length: 88
       watch:
-        - src/brainwf
+        - src/sciopsbrainlab
   - mike:
       version_selector: true
