@@ -23,5 +23,5 @@ services:
       - /bin/bash
       - -c
       - |
-        wf_entrypoint --help &
+        sciopsbrainlab_entrypoint --help &
         tail -f /dev/null

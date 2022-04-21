@@ -1,4 +1,4 @@
-"""_Entrypoint for ingestion routines_
+"""Entrypoint for ingestion routines
 
 This serves as an example command-line entrypoint for running different DataJoint
 populate functions for data ingestion. Requires a valid connection to a database. The
@@ -8,10 +8,10 @@ requires content from the `sciopsbrainlab` package.
 Example:
     Usage as a console entrypoint:
 
-        sciopsbrainlab --help
-        sciopsbrainlab task1
-        sciopsbrainlab task2 -d 600 -s 60
-        sciopsbrainlab -vvv task1
+        sciopsbrainlab_entrypoint --help
+        sciopsbrainlab_entrypoint task1
+        sciopsbrainlab_entrypoint task2 -d 600 -s 60
+        sciopsbrainlab_entrypoint -vvv task1
 
     Usage as a script:
 
@@ -20,7 +20,8 @@ Example:
 
     Usage from python:
 
-        from sciopsbrainlab import run; run(task='task1', duration=20, sleep=5)
+        from sciopsbrainlab_entrypoint import run
+        run(task=..., duration=20, sleep=5)
 
 Attributes:
     LOGGER (logging.Logger): Module level logger when specifying verbosity.
