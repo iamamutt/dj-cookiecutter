@@ -36,7 +36,7 @@
 			"docker"
 		],
 		"djcookiecutter.condaExec": "mamba",
-		"djcookiecutter.localPath": "${env:HOME}/Documents/science-institute/dj-cookiecutter",
+		"djcookiecutter.localPath": "${env:HOME}/Documents/datajoint/dj-cookiecutter",
 		"files.exclude": {
 			"**/.DS_Store": true,
 			"**/.git": true,

@@ -84,7 +84,7 @@
 			"reportGeneralTypeIssues": "information"
 		},
 		"python.analysis.typeCheckingMode": "basic",
-		"python.defaultInterpreterPath": "${env:CONDA_ENV_ROOT}/sciopsbrainlab",
+		"python.defaultInterpreterPath": "${env:CONDA_ENV_ROOT}/sciops_brain_lab",
 		"python.formatting.blackArgs": [
 			"--line-length=88"
 		],
@@ -120,7 +120,7 @@
 			{
 				"name": "Python: Debug entrypoint.py",
 				"type": "python",
-				"program": "${workspaceFolder}/src/sciopsbrainlab/entrypoint.py",
+				"program": "${workspaceFolder}/src/sciops_brain_lab/entrypoint.py",
 				"args": [
 					"task1",
 					"-d",
@@ -209,7 +209,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"sciopsbrainlab",
+					"sciops_brain_lab",
 					"${config:djcookiecutter.condaExec}",
 					"update",
 					"-qy",
@@ -229,7 +229,7 @@
 					"env",
 					"remove",
 					"-n",
-					"sciopsbrainlab"
+					"sciops_brain_lab"
 				]
 			},
 			{
@@ -240,7 +240,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"sciopsbrainlab",
+					"sciops_brain_lab",
 					"${config:djcookiecutter.condaExec}",
 					"list"
 				],
@@ -256,7 +256,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"sciopsbrainlab",
+					"sciops_brain_lab",
 					"pip",
 					"install",
 					"-e",
@@ -271,7 +271,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"sciopsbrainlab",
+					"sciops_brain_lab",
 					"pip",
 					"uninstall",
 					"-y",
@@ -298,7 +298,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"sciopsbrainlab",
+					"sciops_brain_lab",
 					"pre-commit",
 					"install",
 					"--install-hooks"
@@ -312,7 +312,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"sciopsbrainlab",
+					"sciops_brain_lab",
 					"pre-commit",
 					"autoupdate"
 				]
@@ -325,7 +325,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"sciopsbrainlab",
+					"sciops_brain_lab",
 					"pre-commit",
 					"run",
 					"--verbose",
@@ -340,7 +340,7 @@
 					"run",
 					"--no-capture-output",
 					"-n",
-					"sciopsbrainlab",
+					"sciops_brain_lab",
 					"nox",
 					"-s",
 					"main_cli"
@@ -423,13 +423,13 @@
 					"-i",
 					"'docs/assets/*'",
 					"-i",
-					"'src/sciopsbrainlab/*'",
+					"'src/sciops_brain_lab/*'",
 					"-i",
-					"'!src/sciopsbrainlab/__init__.py'",
+					"'!src/sciops_brain_lab/__init__.py'",
 					"-i",
-					"'!src/sciopsbrainlab/__main__.py'",
+					"'!src/sciops_brain_lab/__main__.py'",
 					"-i",
-					"'!src/sciopsbrainlab/entrypoint.py'",
+					"'!src/sciops_brain_lab/entrypoint.py'",
 					"${workspaceFolder}"
 				],
 				"options": {
