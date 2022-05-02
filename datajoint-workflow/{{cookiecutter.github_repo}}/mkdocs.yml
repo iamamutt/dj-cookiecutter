@@ -92,6 +92,11 @@ plugins:
       default_handler: python
       handlers:
         python:
+          paths:
+            - src
+          setup_commands:
+            - "import sys"
+            - "sys.path.append('src')"
           rendering:
             docstring_section_style: spacy
             line_length: 88
