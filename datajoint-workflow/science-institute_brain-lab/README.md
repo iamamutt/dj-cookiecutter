@@ -178,7 +178,6 @@ See the [_Development setup_](./CONTRIBUTING.md#setting-up-a-local-development-e
 │       └── __init__.py    <- Root-level package init file.
 │       └── __main__.py    <- Main package script.
 │       └── version.py     <- Should only contain the current package version number.
-
 ├── tests                   <- Unit and integration tests which can be run with `pytest` or `nox`.
 ├── .cookiecutter.json      <- Options specified during template generation.
 ├── .gitignore              <- Files and folders to ignore for git.
