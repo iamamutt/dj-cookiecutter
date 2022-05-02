@@ -8,7 +8,7 @@
         "docs/overrides/*"
     ],
     "_djconfig": "dj_local_conf.json",
-    "_pkg_version": "0.0.1",
+    "_pkg_version": "0.0.0",
     "author_email": "firstname@datajoint.com",
     "author_name": "FirstName LastName",
     "docs_url": "https://dj-sciops.github.io/science-institute_brain-lab",
