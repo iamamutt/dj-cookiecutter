@@ -68,3 +68,4 @@ dj_local_conf.json
 # Misc files/folders
 scratch/*
 src/brain_lab/scratch/*
+.junk/

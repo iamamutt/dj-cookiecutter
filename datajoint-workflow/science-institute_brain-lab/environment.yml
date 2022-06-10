@@ -44,4 +44,4 @@ dependencies:
   - pip:
       - ipykernel
       - djsciops
-      - datajoint>=0.13.4
+      - datajoint>=0.13.5
