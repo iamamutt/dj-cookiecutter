@@ -1,0 +1,3 @@
+ipykernel
+djsciops
+datajoint>=0.13.5

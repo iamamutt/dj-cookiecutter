@@ -1,0 +1,75 @@
+#  > docker-compose -f docker/.devcontainer/docker-compose.yml up -V --detach --force-recreate --remove-orphans --build
+#  > docker-compose -f docker/.devcontainer/docker-compose.yml down --volumes
+
+version: "2.4"
+services:
+  mysql_sciops:
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DJ_PASS:-simple}
+    image: datajoint/mysql:5.7
+    networks:
+      brain_lab:
+    platform: linux/amd64
+    ports:
+      - 6603:3306
+    restart: always
+    volumes:
+      - sciops-sqldata:/var/lib/mysql
+
+  devcontainer_env:
+    build:
+      context: ../../.
+      dockerfile: docker/.devcontainer/build/Dockerfile
+      args:
+        REPO_NAME: ${REPO_NAME?}
+        WORKFLOW_VERSION: v${WORKFLOW_VERSION?}
+    image: ghcr.io/${REPO_OWNER?}/${REPO_NAME}:latest
+    depends_on:
+      mysql_sciops:
+        condition: service_healthy
+    environment:
+      DJ_HOST: mysql_sciops
+      DJ_PASS: ${DJ_PASS:-simple}
+      DJ_USER: ${DJ_USER:-root}
+    init: true
+    tty: true
+    networks:
+      brain_lab:
+    ports:
+      - 18888:8888
+    volumes:
+      - ../..:/home/ubuntu/${REPO_NAME}
+      - vscode:/home/ubuntu/.vscode-server/extensions
+      - /home/ubuntu/${REPO_NAME}/.nox
+      - /home/ubuntu/${REPO_NAME}/src/brain_lab.egg-info
+
+  # MySQL GUI --------------
+  # http://localhost:8087/
+  # System: PostgreSQL
+  # Server: mysql_sciops
+  # Username: root
+  # Password: simple
+  adminer:
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql_sciops
+      ADMINER_DESIGN: nette
+    image: adminer
+    networks:
+      brain_lab:
+    ports:
+      - target: 8080
+        published: 8087
+    restart: always
+    depends_on:
+      mysql_sciops:
+        condition: service_started
+
+networks:
+  brain_lab:
+    name: brain-lab-network
+
+volumes:
+  sciops-sqldata:
+    name: brain-lab-vol-sciops-sqldata
+  vscode:
+    name: brain-lab-vol-vscode
