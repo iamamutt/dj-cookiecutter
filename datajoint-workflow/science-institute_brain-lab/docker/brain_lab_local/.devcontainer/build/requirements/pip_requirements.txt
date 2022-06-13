@@ -1,4 +1,4 @@
-ipykernel
+datajoint-utilities @ git+https://github.com/datajoint-company/datajoint-utilities
 datajoint>=0.13.5
 djsciops
-datajoint-utilities @ git+https://github.com/datajoint-company/datajoint-utilities
+ipykernel

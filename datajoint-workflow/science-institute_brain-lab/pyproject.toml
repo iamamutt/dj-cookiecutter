@@ -23,29 +23,31 @@ classifiers = [
 ]
 dynamic = ["version"]
 dependencies = [
-    "cryptography", # datajoint
-    "ipython",      # datajoint
-    "matplotlib",   # datajoint
-    "minio",        # datajoint
-    "networkx",     # datajoint
-    "numpy",        # datajoint
-    "otumat",       # datajoint
-    "pandas",       # datajoint
-    "pydot",        # datajoint
-    "pymysql",      # datajoint
-    "pyparsing",    # datajoint
-    "tqdm",         # datajoint
-    "urllib3",      # datajoint
-    "appdirs",      # djsciops-axon
-    "boto3",        # djsciops-axon
-    "flask",        # djsciops-axon
-    "click",        # brain_lab
-    "h5py",         # brain_lab
-    "plotly",       # brain_lab
-    "pyyaml",       # brain_lab
-    "scipy",        # brain_lab
-    "seaborn",      # brain_lab
-    "tomli",        # brain_lab
+    "cryptography",                                                                       # datajoint
+    "ipython",                                                                            # datajoint
+    "matplotlib",                                                                         # datajoint
+    "minio",                                                                              # datajoint
+    "networkx",                                                                           # datajoint
+    "numpy",                                                                              # datajoint
+    "otumat",                                                                             # datajoint
+    "pandas",                                                                             # datajoint
+    "pydot",                                                                              # datajoint
+    "pymysql",                                                                            # datajoint
+    "pyparsing",                                                                          # datajoint
+    "tqdm",                                                                               # datajoint
+    "urllib3",                                                                            # datajoint
+    "appdirs",                                                                            # djsciops-axon
+    "boto3",                                                                              # djsciops-axon
+    "flask",                                                                              # djsciops-axon
+    "click",                                                                              # brain_lab
+    "h5py",                                                                               # brain_lab
+    "plotly",                                                                             # brain_lab
+    "pyyaml",                                                                             # brain_lab
+    "scipy",                                                                              # brain_lab
+    "seaborn",                                                                            # brain_lab
+    "tomli",                                                                              # brain_lab
+    "datajoint-utilities @ git+https://github.com/datajoint-company/datajoint-utilities", # brain_lab @ pypi
+    "datajoint>=0.13.5",                                                                  # brain_lab @ pypi
 ]
 
 [project.optional-dependencies]
@@ -62,12 +64,7 @@ doc = [
     "mike",
 ]
 test = ["pytest"]
-sciops = [
-    "ipykernel",
-    "datajoint>=0.13.5",
-    "djsciops",
-    "datajoint-utilities @ git+https://github.com/datajoint-company/datajoint-utilities",
-]
+sciops = ["ipykernel", "djsciops"]
 
 [project.scripts]
 brain_lab_entrypoint = "brain_lab.populate.entrypoint:cli"
