@@ -424,7 +424,7 @@
 					"-i",
 					"'docs/assets/*'",
 					"-i",
-					"'docker/brain_lab/.devcontainer/build/requirements'",
+					"'docker/brain_lab_local/.devcontainer/build/requirements'",
 					"-i",
 					"'src/brain_lab/*'",
 					"-i",
