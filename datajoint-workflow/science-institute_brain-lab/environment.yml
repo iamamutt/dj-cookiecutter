@@ -6,7 +6,6 @@ dependencies:
 - boto3
 - click
 - cryptography
-- faker
 - flask
 - h5py
 - ipython
@@ -14,7 +13,6 @@ dependencies:
 - matplotlib
 - minio
 - networkx<2.8.3
-- nixio
 - numpy
 - otumat
 - pandas
