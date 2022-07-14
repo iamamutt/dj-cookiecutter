@@ -408,6 +408,10 @@
 					"datajoint-workflow",
 					"-n",
 					"cookies",
+					"-i",
+					"'pyproject.code-workspace'",
+					"-i",
+					"'dj_local_conf.json'",
 					"'${workspaceFolder}'"
 				],
 				"options": {

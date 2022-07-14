@@ -46,7 +46,7 @@ dependencies = [
     "scipy",                                                                              # brain_lab
     "seaborn",                                                                            # brain_lab
     "tomli",                                                                              # brain_lab
-    "datajoint>=0.13.6",                                                                  # brain_lab @ pypi
+    "datajoint>=0.13.7",                                                                  # brain_lab @ pypi
     "datajoint-utilities @ git+https://github.com/datajoint-company/datajoint-utilities", # brain_lab @ pypi
     "plotnine",                                                                           # brain_lab @ pypi
     "polars",                                                                             # brain_lab @ pypi

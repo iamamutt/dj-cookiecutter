@@ -68,5 +68,5 @@ dj_local_conf.json
 # Misc files/folders
 pyproject.code-workspace
 scratch/*
-src/brain_lab/scratch/*
-.junk/
+src/brain_lab/experimental/*
+./.junk

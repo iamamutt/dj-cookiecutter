@@ -32,7 +32,7 @@ dependencies:
 - urllib3
 - pip:
   - datajoint-utilities @ git+https://github.com/datajoint-company/datajoint-utilities
-  - datajoint>=0.13.6
+  - datajoint>=0.13.7
   - djsciops
   - ipykernel
 name: brain_lab
