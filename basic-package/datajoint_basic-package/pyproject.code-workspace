@@ -369,6 +369,8 @@
 					"basic-package",
 					"-n",
 					"cookies",
+					"-i",
+					"'pyproject.code-workspace'",
 					"'${workspaceFolder}'"
 				],
 				"options": {
@@ -393,10 +395,6 @@
 					"'environment.yml'",
 					"-i",
 					"'src/basic_package/*'",
-					"-i",
-					"'!src/basic_package/__init__.py'",
-					"-i",
-					"'!src/basic_package/__main__.py'",
 					"${workspaceFolder}"
 				],
 				"options": {

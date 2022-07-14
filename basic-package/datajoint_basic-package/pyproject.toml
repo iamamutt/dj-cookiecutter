@@ -23,30 +23,30 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dependencies = [
-    "cryptography",      # datajoint
-    "ipython",           # datajoint
-    "matplotlib",        # datajoint
-    "minio",             # datajoint
-    "networkx<2.8.3",    # datajoint
-    "numpy",             # datajoint
-    "otumat",            # datajoint
-    "pandas",            # datajoint
-    "pydot",             # datajoint
-    "pymysql",           # datajoint
-    "pyparsing",         # datajoint
-    "tqdm",              # datajoint
-    "urllib3",           # datajoint
-    "click",             # basic_package
-    "h5py",              # basic_package
-    "plotly",            # basic_package
-    "pyyaml",            # basic_package
-    "scipy",             # basic_package
-    "seaborn",           # basic_package
-    "tomli",             # basic_package
-    "datajoint>=0.13.6", # basic_package @ pypi
-    # "datajoint-utilities @ git+https://github.com/datajoint-company/datajoint-utilities", # basic_package @ pypi
-    "plotnine", # basic_package @ pypi
-    "polars",   # basic_package @ pypi
+    "cryptography",                                                                       # datajoint
+    "ipython",                                                                            # datajoint
+    "matplotlib",                                                                         # datajoint
+    "minio",                                                                              # datajoint
+    "networkx<2.8.3",                                                                     # datajoint
+    "numpy",                                                                              # datajoint
+    "otumat",                                                                             # datajoint
+    "pandas",                                                                             # datajoint
+    "pydot",                                                                              # datajoint
+    "pymysql",                                                                            # datajoint
+    "pyparsing",                                                                          # datajoint
+    "tqdm",                                                                               # datajoint
+    "urllib3",                                                                            # datajoint
+    "click",                                                                              # basic_package
+    "h5py",                                                                               # basic_package
+    "plotly",                                                                             # basic_package
+    "pyyaml",                                                                             # basic_package
+    "scipy",                                                                              # basic_package
+    "seaborn",                                                                            # basic_package
+    "tomli",                                                                              # basic_package
+    "datajoint>=0.13.7",                                                                  # basic_package @ pypi
+    "datajoint-utilities @ git+https://github.com/datajoint-company/datajoint-utilities", # basic_package @ pypi
+    "plotnine",                                                                           # basic_package @ pypi
+    "polars",                                                                             # basic_package @ pypi
 ]
 
 [project.optional-dependencies]
