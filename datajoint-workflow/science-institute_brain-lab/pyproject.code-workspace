@@ -431,6 +431,8 @@
 					"-i",
 					"'docs/assets/*'",
 					"-i",
+					"'environment.yml'",
+					"-i",
 					"'docker/brain_lab_local/.devcontainer/build/requirements'",
 					"-i",
 					"'src/brain_lab/*'",
