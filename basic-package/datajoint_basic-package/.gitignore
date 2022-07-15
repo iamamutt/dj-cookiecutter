@@ -70,4 +70,4 @@ dj_local_conf.json
 # Misc files/folders
 scratch/*
 src/basic_package/experimental/*
-./.junk
+.junk/*
