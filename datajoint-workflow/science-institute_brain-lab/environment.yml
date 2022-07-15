@@ -33,6 +33,6 @@ dependencies:
 - pip:
   - datajoint-utilities @ git+https://github.com/datajoint-company/datajoint-utilities
   - datajoint>=0.13.7
+  - dj-wft-cim @ git+https://github.com/dj-sciops/wt-causality-in-motion
   - djsciops
-  - ipykernel
 name: brain_lab
