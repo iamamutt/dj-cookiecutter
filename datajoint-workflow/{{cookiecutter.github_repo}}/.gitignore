@@ -69,4 +69,4 @@ dj_local_conf.json
 pyproject.code-workspace
 scratch/*
 src/{{cookiecutter.__pkg_import_name}}/experimental/*
-./.junk
+.junk/*
