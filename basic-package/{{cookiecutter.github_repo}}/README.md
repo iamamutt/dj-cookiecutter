@@ -7,9 +7,6 @@
 ```
 ├── .github                 <- GitHub workflows, templates, and actions.
 ├── configs                 <- Store project/build/analysis configuration files here.
-├── notebooks               <- Jupyter notebooks. Naming convention is a number for
-│                              ordering, the creator's initials, and a description.
-│                              For example, '1.0-fw-initial-data-exploration'.
 ├── scripts                 <- Analysis examples or production scripts which rely on
 │                              importing the actual Python package, e.g. running queries.
 ├── src/

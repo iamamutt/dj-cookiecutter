@@ -1,7 +1,7 @@
 default_language_version:
   python: python{{cookiecutter.python_version}}
 # files: "^(tests|src\/{{cookiecutter.__pkg_import_name}})\/.*$"
-exclude: "^$"
+exclude: "\\.svg$"
 default_stages: [commit, push]
 repos:
   # for debugging hook input arguments
@@ -59,6 +59,7 @@ repos:
     rev: 0.5.0
     hooks:
       - id: nbstripout
+        exclude: notebooks/01-pipeline-diagram.ipynb
 
   # python linting
   - repo: https://github.com/pycqa/flake8
