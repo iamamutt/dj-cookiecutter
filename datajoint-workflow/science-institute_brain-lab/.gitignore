@@ -69,4 +69,4 @@ dj_local_conf.json
 pyproject.code-workspace
 scratch/*
 src/brain_lab/experimental/*
-./.junk
+.junk/*
