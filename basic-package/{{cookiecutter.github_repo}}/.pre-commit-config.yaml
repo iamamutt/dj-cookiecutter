@@ -59,7 +59,9 @@ repos:
     rev: 0.5.0
     hooks:
       - id: nbstripout
-        exclude: notebooks/01-pipeline-diagram.ipynb
+        args:
+          - "--keep-output"
+          - "--strip-empty-cells"
 
   # python linting
   - repo: https://github.com/pycqa/flake8
